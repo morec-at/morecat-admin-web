@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+
+{% block page-css %}
+{% style "/css/dataTables.bootstrap.min.css" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="row">
+  <div class="container-fluid">
+    <div class="col-lg-12">
+      <h1 class="page-header">Entries</h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <div class="dataTable_wrapper">
+            <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+              <thead>
+              <tr>
+                <th>Title</th>
+                <th>Tags</th>
+                <th>State</th>
+                <th>Author</th>
+                <th>Created At</th>
+                <th>Updated At</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td>Dummy Title1</td>
+                <td>some2, tags</td>
+                <td>Published</td>
+                <td>admin</td>
+                <td>2016-03-01 00:00:00</td>
+                <td>2016-01-03 00:00:00</td>
+              </tr>
+              <tr>
+                <td>Dummy Title2</td>
+                <td>some1, tags</td>
+                <td>Published</td>
+                <td>admin</td>
+                <td>2016-01-01 00:00:00</td>
+                <td>2016-01-01 00:00:00</td>
+              </tr>
+              <tr>
+                <td>Dummy Title3</td>
+                <td>some3, tags</td>
+                <td>Published</td>
+                <td>admin</td>
+                <td>2016-02-01 00:00:00</td>
+                <td>2016-01-02 00:00:00</td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block page-scripts %}
+{% script "/js/jquery.dataTables.min.js" %}
+{% script "/js/dataTables.bootstrap.min.js" %}
+<script>
+  $(document).ready(function() {
+    $('#dataTables-example').DataTable({
+      responsive: true
+    });
+  });
+</script>
+{% endblock %}
