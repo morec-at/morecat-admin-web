@@ -10,6 +10,8 @@
   {% style "/css/timeline.css" %}
   {% style "/css/sb-admin-2.css" %}
   {% style "/css/font-awesome.min.css" %}
+  {% block page-css %}
+  {% endblock %}
 </head>
 <body>
 
@@ -44,16 +46,11 @@
         <ul class="nav" id="side-menu">
           <li class="sidebar-search">
             <div class="input-group custom-search-form">
-              <input type="text" class="form-control" placeholder="Search...">
-              <span class="input-group-btn">
-                <button class="btn btn-default" type="button">
-                  <i class="fa fa-search"></i>
-                </button>
-              </span>
+              <a id="new-entry" class="btn btn-primary" href="{{servlet/context}}/entries/new" role="link">New Post</a>
             </div>
           </li>
           <li><a href="{{servlet-context}}/"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a></li>
-          <li><a href="{{servlet-context}}/entries"><i class="fa fa-edit fa-fw"></i> Entries</a></li>
+          <li><a id="entries_link" href="{{servlet-context}}/entries"><i class="fa fa-edit fa-fw"></i> Entries</a></li>
           <li><a href="{{servlet-context}}/media"><i class="fa fa-camera fa-fw"></i> Media</a></li>
           <li>
             <a href="#"><i class="fa fa-cogs fa-fw"></i> Settings<span class="fa arrow"></span></a>
