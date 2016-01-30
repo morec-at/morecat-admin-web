@@ -38,7 +38,7 @@
     (see-other "/entries")))
 
 (defroutes entries-routes
-           (context "/entries"
+           (context "/entries" []
              (GET "/" [] (entries-page))
              (GET "/new" [] (entry-new-page))
              (POST "/new" [& form] (entry-new-submit form))
