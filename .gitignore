@@ -8,6 +8,7 @@ pom.xml
 /.lein-*
 profiles.clj
 /.env
-*.log
+/log
 .idea
 *.iml
+.nrepl-port

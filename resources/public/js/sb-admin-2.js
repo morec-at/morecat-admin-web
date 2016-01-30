@@ -27,10 +27,14 @@ $(function() {
     });
 
     var url = window.location;
-    var element = $('ul#side-menu.nav a').filter(function() {
+    var sidebar = $('ul#side-menu.nav');
+    var sidebarLinks = sidebar.find('a');
+    var element = sidebarLinks.filter(function() {
         return this.href == url;
-    }).addClass('active').parent().parent().addClass('in').parent();
-    if (element.is('li')) {
-        element.addClass('active');
+    });
+    if (url.href.match("/entries/")) {
+        sidebar.find('a#entries_link').addClass('active').parent().parent().addClass('in').parent();
+    } else {
+        element.addClass('active').parent().parent().addClass('in').parent();
     }
 });

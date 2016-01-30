@@ -30,30 +30,16 @@
               </tr>
               </thead>
               <tbody>
+              {% for e in entries %}
               <tr>
-                <td>Dummy Title1</td>
-                <td>some2, tags</td>
-                <td>Published</td>
-                <td>admin</td>
-                <td>2016-03-01 00:00:00</td>
-                <td>2016-01-03 00:00:00</td>
+                <td><a href="{{servlet-context}}/entries/{{e.id}}">{{e.title}}</a></td>
+                <td>{{e.tags}}</td>
+                <td>{{e.state}}</td>
+                <td>{{e.authorName}}</td>
+                <td>{{e.createdTime}}</td>
+                <td>TODO</td>
               </tr>
-              <tr>
-                <td>Dummy Title2</td>
-                <td>some1, tags</td>
-                <td>Published</td>
-                <td>admin</td>
-                <td>2016-01-01 00:00:00</td>
-                <td>2016-01-01 00:00:00</td>
-              </tr>
-              <tr>
-                <td>Dummy Title3</td>
-                <td>some3, tags</td>
-                <td>Published</td>
-                <td>admin</td>
-                <td>2016-02-01 00:00:00</td>
-                <td>2016-01-02 00:00:00</td>
-              </tr>
+              {% endfor %}
               </tbody>
             </table>
           </div>

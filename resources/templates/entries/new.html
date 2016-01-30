@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="row">
+  <div class="container-fluid">
+    <div class="col-lg-12">
+      <h1 class="page-header">New Entry</h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-12">
+      <form role="form" method="post">
+        {% csrf-field %}
+        <div class="row">
+          <div class="col-lg-2">
+            <div class="form-group">
+              <label for="title">Title</label>
+              <input id="title" name="title" type="text" class="form-control">
+            </div>
+          </div>
+          <div class="col-lg-2">
+            <div class="form-group">
+              <label for="permalink">Permalink</label>
+              <input id="permalink" name="permalink" type="text" class="form-control">
+            </div>
+          </div>
+          <div class="col-lg-2">
+            <div class="form-group">
+              <label for="tags">Tags</label>
+              <input id="tags" name="tags" type="text" class="form-control">
+            </div>
+          </div>
+          <div class="col-lg-2">
+            <div class="form-group">
+              <label for="format">Format</label>
+              <select id="format" name="format" class="form-control">
+                {% for f in available-formats %}
+                <option value="{{f}}">{{f}}</option>
+                {% endfor %}
+              </select>
+            </div>
+          </div>
+          <div class="col-lg-1">
+            <div class="form-group">
+              <label for="state">State</label>
+              <select id="state" name="state" class="form-control">
+                {% for s in available-states %}
+                <option value="{{s}}">{{s}}</option>
+                {% endfor %}
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="form-group">
+              <label for="content">Content</label>
+              <textarea id="content" name="content" rows="20" class="form-control"></textarea>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="form-group">
+              <label for="preview">Preview</label>
+              <p id="preview" class="form-control-static"></p>
+            </div>
+          </div>
+        </div>
+        <!--<div class="form-group submit">-->
+          <!--<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#confirmation">Update</button>-->
+        <!--</div>-->
+        <div class="form-group submit">
+          <button type="submit" class="btn btn-primary">Post</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div id="confirmation" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="confirmation-label">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-labelledby="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="confirmation-label">Confirmation</h4>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <a id="submit" class="btn btn-primary" href="#" role="button" data-toggle="modal">Save</a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block page-scripts %}
+$('#submit').click(function(){
+  alert('okok');
+});
+{% endblock %}

@@ -23,7 +23,9 @@
                  [mount "0.1.8"]
                  [luminus-nrepl "0.1.2"]
                  [org.webjars/webjars-locator-jboss-vfs "0.1.0"]
-                 [luminus-immutant "0.1.0"]]
+                 [luminus-immutant "0.1.0"]
+                 [clj-http "2.0.1"]
+                 [cheshire "5.5.0"]]
 
   :min-lein-version "2.0.0"
   :uberjar-name "morecat-admin-web.jar"
