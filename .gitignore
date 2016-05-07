@@ -2,7 +2,9 @@ typings/
 node_modules/
 *.js
 *.js.map
+!systemjs.config.js
 
 .idea
 *.iml
 
+*.log
