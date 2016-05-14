@@ -1,0 +1,22 @@
+<h1>Entries</h1>
+<div *ngIf="loading">loading...</div>
+<table border="1">
+  <thead>
+  <tr>
+    <th>Title</th>
+    <th>Author</th>
+    <th>Tags</th>
+    <th>State</th>
+    <th>Published/Updated Date</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let entry of entries">
+    <td><a [routerLink]="['/EntryEdit', {id: entry.id}]">{{entry.title}}</a></td>
+    <td>{{entry.authorName}}</td>
+    <td>{{entry.tags}}</td>
+    <td>{{entry.state}}</td>
+    <td>{{entry.createdTime}}/TODO</td>
+  </tr>
+  </tbody>
+</table>
