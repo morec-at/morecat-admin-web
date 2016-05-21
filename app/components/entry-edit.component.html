@@ -1,0 +1,46 @@
+<div *ngIf="entry">
+  <h1>Entry Edit</h1>
+  <div>
+    <form [ngFormModel]="form" (ngSubmit)="onSubmit(form.value)">
+      <div>
+        <label for="title">Title</label>
+        <input id="title" #title="ngForm" [ngFormControl]="form.controls['title']" [(ngModel)]="entry.title">
+      </div>
+      <div>
+        <label for="permalink">Permalink</label>
+        <input id="permalink" #permalink="ngForm" [ngFormControl]="form.controls['permalink']" [(ngModel)]="entry.permalink">
+      </div>
+      <div>
+        <label for="tags">Tags</label>
+        <input id="tags" #tags="ngForm" [ngFormControl]="form.controls['tags']" [(ngModel)]="entry.tags">
+      </div>
+      <div>
+        <label for="format">Format</label>
+        <select id="format" #formt="ngForm" [ngFormControl]="form.controls['format']" [(ngModel)]="entry.format">
+          <option *ngFor="let format of availableFormats" [selected]="format === entry.format">{{format}}</option>
+        </select>
+      </div>
+      <div>
+        <label for="state">State</label>
+        <select id="state" #state="ngForm" [ngFormControl]="form.controls['state']" [(ngModel)]="entry.state">
+          <option *ngFor="let state of availableStates" [selected]="state === entry.state">{{state}}</option>
+        </select>
+      </div>
+      <div>
+        <label for="content">Content</label>
+        <textarea id="content" #content="ngForm" [ngFormControl]="form.controls['content']" [(ngModel)]="entry.content"></textarea>
+      </div>
+      <div>
+        <label for="preview">Preview</label>
+        <p id="preview">{{entry.content}}</p>
+      </div>
+      <div>
+        <button>Save Changes</button>
+        <button>Delete</button>
+      </div>
+    </form>
+  </div>
+  <div>
+    <button (click)="goBack()">Back</button>
+  </div>
+</div>

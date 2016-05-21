@@ -4,6 +4,7 @@ import {RouteConfig, ROUTER_DIRECTIVES} from '@angular/router-deprecated';
 import {HomeComponent} from './home.component';
 import {NewEntryComponent} from './new_entry.component';
 import {EntriesComponent} from './entries.component';
+import {EntryEditComponent} from './entry-edit.component';
 import {MediaComponent} from './media.component';
 import {AccountComponent} from './account.component';
 import {UsersComponent} from './users.component';
@@ -31,6 +32,7 @@ import {ConfigurationComponent} from './configuration.component';
   {path: '/', name: 'Home', component: HomeComponent},
   {path: '/entries/new', name: 'NewEntry', component: NewEntryComponent},
   {path: '/entries', name: 'Entries', component: EntriesComponent},
+  {path: '/entries/:id', name: 'EntryEdit', component: EntryEditComponent},
   {path: '/media', name: 'Media', component: MediaComponent},
   {path: '/account', name: 'Account', component: AccountComponent},
   {path: '/users', name: 'Users', component: UsersComponent},
