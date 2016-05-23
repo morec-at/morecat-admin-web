@@ -52,7 +52,8 @@ export class EntryEditComponent implements OnInit {
   }
 
   onSubmit(form:any):void {
-    console.log(form);
+    this.entryService.update(Number(this.routeParams.get('id')), form)
+      .subscribe();
   }
 
   goBack():void {
