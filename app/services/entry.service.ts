@@ -28,7 +28,7 @@ export class EntryService {
       'title': form.title,
       'content': form.content,
       'permalink': form.permalink,
-      //'tags': form.tags,
+      'tags': form.tags.replace(/\s+/g,'').split(','),
       'state': form.state,
       'format': form.format
     });
